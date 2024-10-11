@@ -25,7 +25,7 @@ Urban Parking Solution is a web-based platform under development, aimed at conne
 ### CSS Files
 
 - **`styles.css`**: The stylesheet for the overall design and layout of the platform.
-- 
+  
 ## Future Plans
 
 - Implement backend functionality for real-time booking.
