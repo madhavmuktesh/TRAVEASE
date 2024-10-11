@@ -1,4 +1,4 @@
-# Urban Parking Solution - TravEase
+# Urban Parking Solution - TRAVEASE
 
 ## Overview
 
