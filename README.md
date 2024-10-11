@@ -5,6 +5,7 @@
 TRAVEASE is a web-based platform designed to connect parking lot owners with users seeking convenient parking spaces. The platform enables real-time availability checks, filtering options, and reservations, making it easier for users to find and book parking spots. Currently, only the frontend (HTML and CSS) has been developed.
 
 ## File Structures
+The project consists of several core pages that should be accessed in a specific order to ensure a smooth user experience.
 
 ### HTML Files
 
