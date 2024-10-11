@@ -4,7 +4,7 @@
 
 Urban Parking Solution is a web-based platform under development, aimed at connecting parking lot owners with users looking for convenient parking spaces. This platform will allow real-time availability, filtering, and reservations. Currently, only the frontend of the application (HTML and CSS) has been implemented.
 
-## File Structure
+## File Structures
 
 ### HTML Files
 
