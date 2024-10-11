@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Selection - TRAVEASE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #283593;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .vehicle-selection-container {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex-grow: 1;
+        }
+
+        h2 {
+            color: #283593;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #283593;
+        }
+
+        select, input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .slot-list {
+            margin-top: 20px;
+        }
+
+        .slot-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease;
+        }
+        /* Radio buttons spacing */
+        input[type="radio"] {
+          
+            margin-left: 1px;
+        }
+
+        button.btn {
+            background-color: #ff5722;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button.btn:hover {
+            background-color: #e93f0c;
+        }
+
+        footer {
+            background-color: #283593;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vehicle Selection</h1>
+        <nav>
+            <ul>
+                <li><a href="home2.html">Home</a></li>
+                <li><a href="choose-location.html">Choose Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="vehicle-selection-container">
+        <h2>Select Vehicle Details</h2>
+        <form id="vehicleForm">
+            <div class="form-group">
+                <label for="vehicleType">Vehicle Type:</label>
+                <select id="vehicleType" name="vehicleType">
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Van">Van</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleSize">Vehicle Size:</label>
+                <select id="vehicleSize" name="vehicleSize">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="seater">Seater:</label>
+                <select id="seater" name="seater">
+                    <option value="2-seater">2-Seater</option>
+                    <option value="4-seater">4-Seater</option>
+                    <option value="6-seater">6-Seater</option>
+                    <option value="8-seater">8-Seater</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="slot">Slot:</label>
+                <select id="seater" name="seater">
+                    <option value="Slot-A">Slot - A</option>
+                    <option value="Slot-B">Slot - B</option>
+                    <option value="Slot-C">Slot - C</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn" onclick="showSlots()">Show Available Slots</button>
+        </form>
+
+        <div id="slotsSection" class="slot-list" style="display:none;">
+            <h2>Available Slots</h2>
+            <div class="slot-item">
+                <input type="radio" id="slot1" name="slot" value="10:00 AM - 11:00 AM">
+                <label for="slot1" id="price1">10:00 AM - 11:00 AM - ₹</label>
+            </div>
+            <div class="slot-item">
+                <input type="radio" id="slot2" name="slot" value="11:00 AM - 12:00 PM">
+                <label for="slot2" id="price2">11:00 AM - 12:00 PM - ₹</label>
+            </div>
+            <div class="slot-item">
+                <input type="radio" id="slot3" name="slot" value="12:00 PM - 1:00 PM">
+                <label for="slot3" id="price3">12:00 PM - 1:00 PM - ₹</label>
+            </div>
+            <div class="slot-item">
+                <input type="radio" id="slot4" name="slot" value="2:00 PM - 3:00 PM">
+                <label for="slot4" id="price4">2:00 PM - 3:00 PM - ₹</label>
+            </div>
+            <div class="slot-item">
+                <input type="radio" id="slot5" name="slot" value="3:00 PM - 4:00 PM">
+                <label for="slot5" id="price5">3:00 PM - 4:00 PM - ₹</label>
+            </div>
+
+            <button class="btn" onclick="confirmSelection()">Confirm Slot</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TRAVEASE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSlots() {
+            // Retrieve selected vehicle details
+            const vehicleType = document.getElementById('vehicleType').value;
+            const vehicleSize = document.getElementById('vehicleSize').value;
+            const seater = document.getElementById('seater').value;
+
+            // Display different prices based on vehicle type, size, and seater
+            let basePrice = 30; // Default base price
+
+            if (vehicleType === 'Bike') basePrice += 20;
+            if (vehicleType === 'Van') basePrice += 30;
+
+            if (vehicleSize === 'medium') basePrice += 10;
+            if (vehicleSize === 'large') basePrice += 20;
+
+            if (seater === '6-seater') basePrice += 15;
+            if (seater === '8-seater') basePrice += 25;
+
+            document.getElementById('price1').textContent = `10:00AM - 11:00AM  - ₹${basePrice}`;
+            document.getElementById('price2').textContent = `11:00AM - 12:00PM - ₹${basePrice + 10}`;
+            document.getElementById('price3').textContent = `12:00PM - 1:00PM - ₹${basePrice + 20}`;
+            document.getElementById('price4').textContent = `2:00PM - 3:00PM - ₹${basePrice + 25}`;
+            document.getElementById('price5').textContent = `3:00PM - 4:00PM - ₹${basePrice + 30}`;
+
+            // Show the slots section
+            document.getElementById('slotsSection').style.display = 'block';
+        }
+
+        function confirmSelection() {
+            const selectedSlot = document.querySelector('input[name="slot"]:checked');
+            if (selectedSlot) {
+                // Redirect to payment page
+                window.location.href = 'payment.html';
+            } else {
+                alert('Please select a slot before confirming.');
+            }
+        }
+    </script>
+</body>
+</html>

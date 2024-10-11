@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TRAVEASE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #283593;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+
+        .menu-dropdown .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        .menu-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li {
+            text-align: left;
+            padding: 10px 20px;
+            background-color: white;
+        }
+
+        .dropdown-content li a {
+            color: #283593;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-content li a:hover {
+            color: #ffeb3b;
+            border-radius: 3px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #f4f4f9;
+            background-image: url('path-to-your-background-image.jpg'); 
+            background-size: cover;
+        }
+
+        .hero h2 {
+            color: #283593;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .btn {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #e93f0c;
+        }
+
+        .features {
+            padding: 40px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #283593;
+        }
+
+        .feature-item {
+            margin: 20px;
+            display: inline-block;
+            width: 250px;
+        }
+
+        .feature-item i {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #283593;
+        }
+
+        footer {
+            background: #283593;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .feature-item {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to TRAVEASE</h1>
+        <nav>
+            <ul>
+                <li><a href="home2.html">Home</a></li>
+                <li><a href="choose-location.html">See Locations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="meet-our-team.html">Meet Our Team</a></li>
+                <li><a href="features.html">Features</a></li>
+
+                <!-- Dropdown Menu -->
+                <li class="menu-dropdown">
+                    <a href="#">Menu</a>
+                    <ul class="dropdown-content">
+                        <li><a href="index.html">LogOut</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Your Ultimate Travel Companion</h2>
+        <p>Explore new places and make unforgettable memories.</p>
+        <a href="choose-location.html" class="btn">Get Started</a>
+    </div>
+
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-item">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Explore Locations</h3>
+            <p>Find the best places to visit and create memorable experiences.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-money-bill-wave"></i>
+            <h3>Easy Payments</h3>
+            <p>Secure payment options for hassle-free transactions.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>We're here to help you anytime, anywhere.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TRAVEASE. All rights reserved.</p>
+    </footer>
+</body>
+</html>

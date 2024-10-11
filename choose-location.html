@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Location - TRAVEASE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #map {
+            height: 400px; 
+            width: 100%; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #ff5722; /* Base color */
+            margin: 5px;
+            color: white;
+            padding: 10px 20px;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #e93f0c; /* Hover color */
+        }
+        .btn:active {
+            background-color: #31221d; /* Active color */
+        }
+        /* Different button colors for variety */
+      
+
+        .locations {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .location-item {
+            margin: 10px;
+            position: relative; /* Needed for dropdown positioning */
+        }
+
+        .dropdown {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 10px;
+        }
+
+        .location-item:hover .dropdown {
+            display: block; /* Show dropdown on hover */
+        }
+
+        .Spot-option {
+            cursor: pointer;
+            padding: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .Spot-option:hover {
+            background-color: #f0f0f0; /* Highlight on hover */
+        }
+    </style>
+    <script>
+        let selectedLocation = '';
+        let selectedPrice = '';
+        let mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122410.00036495371!2d80.56248132074137!3d16.510313249105234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1728644982940!5m2!1sen!2sin";
+
+        function selectLocation(locationName, price) {
+            selectedLocation = locationName;
+            selectedPrice = price;
+
+            // Update the map source based on the selected location
+            if (locationName === 'Kanaka Durga Temple') {
+                mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.2243920867422!2d80.60200797570542!3d16.514765484231223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ef944bf125c1%3A0x53751389f7334203!2sKanaka%20Durga%20Hill%20Temple%20%2C%20Indhrakeeladhri!5e0!3m2!1sen!2sin!4v1728209586841!5m2!1sen!2sin";
+            } else if (locationName === 'Bhavani Island') {
+                mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15300.24389512377!2d80.5675102814681!3d16.523019119344557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ee30176fe135%3A0xbd8939b01ccee659!2sBhavani%20Island!5e0!3m2!1sen!2sin!4v1728640291348!5m2!1sen!2sin";
+            } else if (locationName === 'Prakasam Barrage') {
+                mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.4753483457425!2d80.60076007397754!3d16.50208282770707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f026b2fe6f89%3A0x22fc7326215af9de!2sPrakasam%20Barrage!5e0!3m2!1sen!2sin!4v1728637598599!5m2!1sen!2sin";
+            } else if (locationName === 'Undavalli Caves') {
+                mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.57297795675!2d80.57961467397747!3d16.497146327842536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f1ce6c06c9f1%3A0x6826ebc42e1bc392!2sUndavalli%20Cave%20Temple!5e0!3m2!1sen!2sin!4v1728637701142!5m2!1sen!2sin";
+            }
+
+            document.getElementById('map').src = mapSrc; // Update the map iframe source
+            //alert("You have selected: " + selectedLocation + "\nPrice: " + selectedPrice);
+        }
+
+        function confirmLocation() {
+            if (selectedLocation) {
+                window.location.href = 'available-slots.html';
+            } else {
+                alert("Location not available! Please select a location first.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Choose Your Location</h1>
+        <nav>
+            <ul>
+                <li><a href="home2.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="map-container">
+        <h2>Select a Location on the Map</h2>
+        <iframe 
+            id="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122410.00036495371!2d80.56248132074137!3d16.510313249105234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1728644982940!5m2!1sen!2sin";
+  
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+        
+        <h3>Select a Place:</h3>
+        <div class="locations">
+           <div class="location-item">
+                <button class="btn" onclick="selectLocation('Prakasam Barrage', 'Rs-50/hour')">Prakasam Barrage</button>
+                
+            </div>
+            <div class="location-item">
+                <button class="btn" onclick="selectLocation('Kanaka Durga Temple', 'Rs-60/hour')">Kanaka Durga Temple</button>
+                
+            </div>
+            <div class="location-item">
+                <button class="btn" onclick="selectLocation('Bhavani Island', 'Rs-40/hour')">Bhavani Island</button>
+                
+            </div>
+            <div class="location-item">
+                <button class="btn" onclick="selectLocation('Undavalli Caves', 'Rs-50/hour')">Undavalli Caves</button>
+                
+            </div>
+        </div>
+
+        <!-- Confirm Location Button Outside of the List -->
+        <button class="btn" onclick="confirmLocation()">Confirm Location</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TRAVEASE. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Thank You - TRAVEASE</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light background */
+        }
+
+        header {
+            background: #283593; /* Deep blue color for header */
+            color: white;
+            padding: 20px 0;
+            text-align: center; /* Centered header text */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Thank You Container */
+        .thank-you-container {
+            max-width: 600px; /* Set maximum width for the thank you container */
+            margin: 40px auto; /* Center the thank you container */
+            padding: 20px;
+            background-color: white; /* White background for form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center; /* Center the text */
+        }
+
+        .thank-you-container h2 {
+            color: #283593; /* Deep blue for consistency */
+        }
+
+        /* Button Styles */
+        .btn {
+            background: #ff5722; /* Bright orange for buttons */
+            color: white;
+            padding: 10px 20px; /* Padding for buttons */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded button */
+            cursor: pointer; /* Pointer cursor */
+            transition: background 0.3s; /* Smooth transition for button */
+            margin: 5px; /* Space between buttons */
+        }
+
+        .btn:hover {
+            background: #e64a19; /* Darker orange on hover */
+        }
+
+        footer {
+            background-color: #283593;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Ensure footer sticks to the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thank You!</h1>
+    </header>
+
+    <main class="thank-you-container">
+        <h2>Your Feedback has been Submitted!</h2>
+        <p>Thank you for taking the time to share your thoughts with us. Your feedback is invaluable in helping us improve our services.</p>
+        
+        <button class="btn" onclick="goToHome()">Return to Home</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TRAVEASE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goToHome() {
+            window.location.href = 'home2.html'; // Redirect to home page
+        }
+    </script>
+</body>
+</html>

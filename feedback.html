@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light background */
+        }
+
+        header {
+            background: #283593; /* Deep blue color for header */
+            color: white;
+            padding: 20px 0;
+            text-align: center; /* Centered header text */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s; 
+        }
+
+        nav a:hover {
+            color: #ffeb3b; 
+        }
+
+
+        .feedback-container {
+            max-width: 600px;
+            margin: 40px auto; 
+            padding: 20px;
+            background-color: white; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .feedback-container h2 {
+            text-align: center;
+            color: #283593; 
+        }
+
+        .feedback-container p {
+            text-align: center; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px; 
+            font-weight: bold; 
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            font-size: 1em; 
+        }
+
+        textarea {
+            resize: none; 
+        }
+
+
+        .rating {
+            margin: 20px 0; 
+            text-align: center; 
+        }
+
+        .rating label {
+            margin: 0 10px;
+            font-weight: normal; 
+        }
+
+
+        .btn {
+            background: #ff5722; 
+            color: white;
+            padding: 10px;
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #e64a19; 
+        }
+
+
+        footer {
+            background: #283593;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .feedback-container {
+                width: 90%; 
+                margin: 20px auto; 
+            }
+
+            header {
+                padding: 15px 0; 
+            }
+
+            nav ul li {
+                margin: 0 10px
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Feedback Page</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="meet-our-team.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="feedback-container">
+    <h2>We Value Your Feedback</h2>
+    <p>Please fill out the form below to share your thoughts.</p>
+    <form id="feedback-form" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+        <h3>Rate Your Experience:</h3>
+        <div class="rating">
+            <label>
+                <input type="radio" name="rating" value="1"> 1 Star
+            </label>
+            <label>
+                <input type="radio" name="rating" value="2"> 2 Stars
+            </label>
+            <label>
+                <input type="radio" name="rating" value="3"> 3 Stars
+            </label>
+            <label>
+                <input type="radio" name="rating" value="4"> 4 Stars
+            </label>
+            <label>
+                <input type="radio" name="rating" value="5"> 5 Stars
+            </label>
+        </div>
+
+        <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        const rating = document.querySelector('input[name="rating"]:checked');
+        if (!rating) {
+            alert('Please select a rating before submitting.');
+            return;
+        }
+        // Assuming the feedback is successfully submitted, redirect to the thank you page
+        window.location.href = "thank-you.html";
+    }
+</script>
+
+</body>
+</html>

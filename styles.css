@@ -1,0 +1,115 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font across pages */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background */
+}
+
+header {
+    background: #283593; /* Deep blue color for header */
+    color: white;
+    padding: 20px 0; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+header h1 {
+    margin: 0; /* No margin for header title */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px; /* Consistent spacing between nav items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for links */
+}
+
+nav ul li a:hover {
+    color: #ffeb3b; /* Yellow color on hover */
+}
+
+main {
+    padding: 20px; /* Consistent padding for main content */
+}
+
+h2 {
+    text-align: center;
+    color: #283593; /* Match header color */
+}
+
+.team-container {
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: center; /* Center align team members */
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
+}
+
+.team-member {
+    background: white; /* White background for team members */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 150px; /* Adjust width to fit more members */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.team-member h3 {
+    margin: 5px 0 0 0; /* Reduce margin */
+    font-size: 1.1em; /* Slightly smaller font size */
+}
+
+.team-member p {
+    margin: 5px 0 0 0; /* Reduce margin for role */
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically, if needed */
+    margin: 20px 0;
+}
+
+.map-container iframe {
+    max-width: 100%; /* Responsive */
+    height: 450px; /* Fixed height for the map */
+    border: 0; /* Remove default border */
+}
+
+footer {
+    background: #283593; /* Match header color */
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Increased padding for footer */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column; /* Stack team members vertically on small screens */
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%; /* Full width for team member items */
+        margin-bottom: 20px; /* Space between team members */
+    }
+
+    h2 {
+        font-size: 2em; /* Smaller font size for headings on smaller screens */
+    }
+}
